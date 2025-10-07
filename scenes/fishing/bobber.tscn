@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://fyr8gss8ml8t"]
+
+[ext_resource type="Script" uid="uid://be81t6kf0e3it" path="res://fishing/scripts/bobber.gd" id="1_yvb7t"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_n2e5l"]
+radius = 0.05
+height = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1mx03"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Bobber" type="CharacterBody3D"]
+script = ExtResource("1_yvb7t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11136909, -0.037739277, 0)
+mesh = SubResource("SphereMesh_n2e5l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10689932, -0.030942917, 0)
+shape = SubResource("BoxShape3D_1mx03")

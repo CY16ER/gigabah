@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8f3q1x2y405"]
+
+[ext_resource type="Script" uid="uid://0cwfy8xk41ht" path="res://scripts/fishing/fishing_rod.gd" id="1_abcde"]
+[ext_resource type="PackedScene" uid="uid://ud1sjsgdrw1v" path="res://scenes/fishing/fishing_rod.glb" id="2_5fju0"]
+[ext_resource type="PackedScene" uid="uid://fyr8gss8ml8t" path="res://scenes/fishing/bobber.tscn" id="3_n2e5l"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_of2wm"]
+top_radius = 0.003
+bottom_radius = 0.003
+
+[node name="FishingRod" type="Node3D"]
+script = ExtResource("1_abcde")
+
+[node name="fishing_rod" parent="." instance=ExtResource("2_5fju0")]
+transform = Transform3D(0.029805766, 0, 0.9995557, 0, 1, 0, -0.9995557, 0, 0.029805766, 0, 0, 0)
+
+[node name="Bobber" parent="." instance=ExtResource("3_n2e5l")]
+unique_name_in_owner = true
+transform = Transform3D(1.0099475, 0, 0.010294501, 0, 1.01, 0, -0.010294501, 0, 1.0099475, 0, 2.2929182, 0)
+
+[node name="FishingLineStarterMarker" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2316768, 0)
+
+[node name="BobberStartMarker" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2502341, 0)
+
+[node name="FishingLine" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.11129117, 1.1798304, 0)
+mesh = SubResource("CylinderMesh_of2wm")
